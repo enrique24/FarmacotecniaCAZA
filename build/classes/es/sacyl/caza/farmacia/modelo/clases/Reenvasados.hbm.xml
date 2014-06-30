@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-abr-2014 13:00:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="es.sacyl.caza.farmacia.modelo.clases.Reenvasados" table="reenvasados" catalog="farmacotecnia">
+        <id name="idReenvasado" type="java.lang.Integer">
+            <column name="id_reenvasado" />
+            <generator class="identity" />
+        </id>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="26" not-null="true" unique="true" />
+        </property>
+        <property name="principioActivo" type="string">
+            <column name="PRINCIPIO_ACTIVO" length="35" />
+        </property>
+        <property name="lot" type="string">
+            <column name="Lot" length="20" />
+        </property>
+        <property name="caduca" type="string">
+            <column name="Caduca" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

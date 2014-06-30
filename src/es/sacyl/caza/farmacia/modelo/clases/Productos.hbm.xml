@@ -1,0 +1,33 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-abr-2014 13:00:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="es.sacyl.caza.farmacia.modelo.clases.Productos" table="productos" catalog="farmacotecnia">
+        <id name="idComponente" type="java.lang.Integer">
+            <column name="Id_componente" />
+            <generator class="identity" />
+        </id>
+        <property name="componente" type="string">
+            <column name="componente" length="75" unique="true" />
+        </property>
+        <property name="referencia" type="string">
+            <column name="referencia" length="5" unique="true" />
+        </property>
+        <property name="activo" type="java.lang.Boolean">
+            <column name="activo" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="observaciones" length="75" />
+        </property>
+        <property name="estante" type="string">
+            <column name="estante" length="10" />
+        </property>
+        <set name="productosUnions" inverse="true">
+            <key>
+                <column name="Id_componente" not-null="true" />
+            </key>
+            <one-to-many class="es.sacyl.caza.farmacia.modelo.clases.ProductosUnion" />
+        </set>
+    </class>
+</hibernate-mapping>

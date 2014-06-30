@@ -1,0 +1,24 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-abr-2014 13:00:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="es.sacyl.caza.farmacia.modelo.clases.MaterialParaElaborar" table="material_para_elaborar" catalog="farmacotecnia">
+        <id name="idMaterial" type="java.lang.Integer">
+            <column name="Id_MATERIAL" />
+            <generator class="identity" />
+        </id>
+        <property name="material" type="string">
+            <column name="MATERIAL" length="50" not-null="true" unique="true" />
+        </property>
+        <property name="tenemos" type="boolean">
+            <column name="tenemos" not-null="true" />
+        </property>
+        <set name="materialParaElaborarUnions" inverse="true">
+            <key>
+                <column name="Id_material" />
+            </key>
+            <one-to-many class="es.sacyl.caza.farmacia.modelo.clases.MaterialParaElaborarUnion" />
+        </set>
+    </class>
+</hibernate-mapping>

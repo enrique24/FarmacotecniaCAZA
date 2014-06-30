@@ -1,0 +1,84 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-abr-2014 13:00:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="es.sacyl.caza.farmacia.modelo.clases.FichasDeMedicamentos" table="fichas_de_medicamentos" catalog="farmacotecnia">
+        <id name="idMedicamento" type="java.lang.Integer">
+            <column name="Id_medicamento" />
+            <generator class="identity" />
+        </id>
+        <property name="medicamento" type="string">
+            <column name="medicamento" length="100" />
+        </property>
+        <property name="elaboradoPor" type="string">
+            <column name="elaborado_por" length="15" />
+        </property>
+        <property name="procedimiento" type="string">
+            <column name="procedimiento" length="3000" />
+        </property>
+        <property name="observaciones" type="string">
+            <column name="observaciones" length="3000" />
+        </property>
+        <property name="estabilidad" type="string">
+            <column name="estabilidad" length="250" />
+        </property>
+        <property name="organolepsisDatos" type="string">
+            <column name="organolepsis_datos" length="30" />
+        </property>
+        <property name="viaDeAdmon" type="string">
+            <column name="via_de_admon" length="40" />
+        </property>
+        <property name="paraEtiqueta" type="string">
+            <column name="para_etiqueta" length="400" />
+        </property>
+        <property name="origen" type="string">
+            <column name="origen" length="500" />
+        </property>
+        <property name="veredicto" type="java.lang.Integer">
+            <column name="veredicto" />
+        </property>
+        <property name="veredObservac" type="string">
+            <column name="vered_observac" length="100" />
+        </property>
+        <property name="observacParaElaboracion" type="string">
+            <column name="observac_para_elaboracion" length="300" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="40" />
+        </property>
+        <property name="algunEdo" type="string">
+            <column name="algun_EDO" length="50" />
+        </property>
+        <set name="materialParaElaborarUnions" inverse="true">
+            <key>
+                <column name="Id_medicamento" />
+            </key>
+            <one-to-many class="es.sacyl.caza.farmacia.modelo.clases.MaterialParaElaborarUnion" />
+        </set>
+        <set name="materialDeEnvasadoUnions" inverse="true">
+            <key>
+                <column name="Id_medicamento" />
+            </key>
+            <one-to-many class="es.sacyl.caza.farmacia.modelo.clases.MaterialDeEnvasadoUnion" />
+        </set>
+        <set name="etiquetases" inverse="true">
+            <key>
+                <column name="id_medicamento" />
+            </key>
+            <one-to-many class="es.sacyl.caza.farmacia.modelo.clases.Etiquetas" />
+        </set>
+        <set name="maquinariaUnions" inverse="true">
+            <key>
+                <column name="Id_medicamento" />
+            </key>
+            <one-to-many class="es.sacyl.caza.farmacia.modelo.clases.MaquinariaUnion" />
+        </set>
+        <set name="productosUnions" inverse="true">
+            <key>
+                <column name="Id_medicamento" />
+            </key>
+            <one-to-many class="es.sacyl.caza.farmacia.modelo.clases.ProductosUnion" />
+        </set>
+    </class>
+</hibernate-mapping>

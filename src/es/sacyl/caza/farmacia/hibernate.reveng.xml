@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-reverse-engineering PUBLIC "-//Hibernate/Hibernate Reverse Engineering DTD 3.0//EN" "http://hibernate.sourceforge.net/hibernate-reverse-engineering-3.0.dtd">
+<hibernate-reverse-engineering>
+  <schema-selection match-catalog="farmacotecnia"/>
+  <table-filter match-name="maquinaria"/>
+  <table-filter match-name="maquinaria_union"/>
+  <table-filter match-name="reenvasados"/>
+  <table-filter match-name="productos"/>
+  <table-filter match-name="productos_union"/>
+  <table-filter match-name="material_para_elaborar_union"/>
+  <table-filter match-name="material_de_envasado"/>
+  <table-filter match-name="material_para_elaborar"/>
+  <table-filter match-name="fichas_de_medicamentos"/>
+  <table-filter match-name="material_de_envasado_union"/>
+  <table-filter match-name="etiquetas"/>
+</hibernate-reverse-engineering>

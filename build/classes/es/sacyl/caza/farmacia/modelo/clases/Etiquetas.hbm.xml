@@ -1,0 +1,75 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-abr-2014 13:00:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="es.sacyl.caza.farmacia.modelo.clases.Etiquetas" table="etiquetas" catalog="farmacotecnia">
+        <id name="idEtiqueta" type="java.lang.Integer">
+            <column name="id_etiqueta" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="fichasDeMedicamentos" class="es.sacyl.caza.farmacia.modelo.clases.FichasDeMedicamentos" fetch="select">
+            <column name="id_medicamento" />
+        </many-to-one>
+        <property name="descripcion" type="string">
+            <column name="DESCRIPCION" length="75" />
+        </property>
+        <property name="quienLoElabora" type="string">
+            <column name="quien_lo_elabora" length="9" />
+        </property>
+        <property name="caducidad" type="string">
+            <column name="CADUCIDAD" length="41" />
+        </property>
+        <property name="utilizacion" type="string">
+            <column name="UTILIZACION" length="150" />
+        </property>
+        <property name="conservacion" type="string">
+            <column name="CONSERVACION" length="63" />
+        </property>
+        <property name="concentracion" type="string">
+            <column name="CONCENTRACION" length="38" />
+        </property>
+        <property name="tipoEtiqueta" type="string">
+            <column name="TIPO_ETIQUETA" length="1" />
+        </property>
+        <property name="stockMinimo" type="string">
+            <column name="STOCK_MINIMO" length="34" />
+        </property>
+        <property name="referenciaBiblio" type="string">
+            <column name="REFERENCIA_BIBLIO" length="50" />
+        </property>
+        <property name="referenciaCaducidad" type="string">
+            <column name="REFERENCIA_CADUCIDAD" length="175" />
+        </property>
+        <property name="tipo" type="string">
+            <column name="tipo" length="10" />
+        </property>
+        <property name="composicion" type="string">
+            <column name="composicion" length="10" />
+        </property>
+        <property name="EDO" type="string">
+            <column name="E_D_O" length="10" />
+        </property>
+        <property name="viaDeAdmon" type="string">
+            <column name="via_de_admon" length="10" />
+        </property>
+        <property name="numLibroRecetario" type="java.lang.Integer">
+            <column name="num_libro_recetario" />
+        </property>
+        <property name="fechaDeElaboracion" type="string">
+            <column name="fecha_de_elaboracion" length="10" />
+        </property>
+        <property name="prescriptor" type="string">
+            <column name="Prescriptor" length="10" />
+        </property>
+        <property name="nombreDelPaciente" type="string">
+            <column name="nombre_del_paciente" length="10" />
+        </property>
+        <property name="servicio" type="string">
+            <column name="Servicio" length="10" />
+        </property>
+        <property name="advertencia" type="string">
+            <column name="Advertencia" length="10" />
+        </property>
+    </class>
+</hibernate-mapping>

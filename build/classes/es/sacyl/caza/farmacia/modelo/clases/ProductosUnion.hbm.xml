@@ -1,0 +1,27 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-abr-2014 13:00:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="es.sacyl.caza.farmacia.modelo.clases.ProductosUnion" table="productos_union" catalog="farmacotecnia">
+        <id name="idComponenteUnion" type="java.lang.Integer">
+            <column name="Id_componente_union" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="productos" class="es.sacyl.caza.farmacia.modelo.clases.Productos" fetch="select">
+            <column name="Id_componente" not-null="true" />
+        </many-to-one>
+        <many-to-one name="fichasDeMedicamentos" class="es.sacyl.caza.farmacia.modelo.clases.FichasDeMedicamentos" fetch="select">
+            <column name="Id_medicamento" />
+        </many-to-one>
+        <property name="cantidad" type="string">
+            <column name="Cantidad" length="5" />
+        </property>
+        <property name="unidades" type="string">
+            <column name="Unidades" length="15" />
+        </property>
+        <property name="orden" type="string">
+            <column name="orden" length="1" />
+        </property>
+    </class>
+</hibernate-mapping>

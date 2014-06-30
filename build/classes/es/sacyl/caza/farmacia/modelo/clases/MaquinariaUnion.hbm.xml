@@ -1,0 +1,18 @@
+<?xml version="1.0"?>
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN"
+"http://hibernate.sourceforge.net/hibernate-mapping-3.0.dtd">
+<!-- Generated 30-abr-2014 13:00:04 by Hibernate Tools 3.2.1.GA -->
+<hibernate-mapping>
+    <class name="es.sacyl.caza.farmacia.modelo.clases.MaquinariaUnion" table="maquinaria_union" catalog="farmacotecnia">
+        <id name="idMaquinariaUnion" type="java.lang.Integer">
+            <column name="`Id maquinaria union`" />
+            <generator class="identity" />
+        </id>
+        <many-to-one name="maquinaria" class="es.sacyl.caza.farmacia.modelo.clases.Maquinaria" fetch="select">
+            <column name="Id_maquinaria" />
+        </many-to-one>
+        <many-to-one name="fichasDeMedicamentos" class="es.sacyl.caza.farmacia.modelo.clases.FichasDeMedicamentos" fetch="select">
+            <column name="Id_medicamento" />
+        </many-to-one>
+    </class>
+</hibernate-mapping>
